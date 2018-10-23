@@ -1,0 +1,76 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+    <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+                 xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+                 xmlns:prism="clr-namespace:Prism.Mvvm;assembly=Prism.Forms"
+                 prism:ViewModelLocator.AutowireViewModel="True"
+                 x:Class="MereNear.Views.SendOtpPage" NavigationPage.HasNavigationBar="False"
+                 xmlns:common="clr-namespace:MereNear.Views.Common">
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="50"/>
+                <RowDefinition Height="*"/>
+            </Grid.RowDefinitions>
+            <common:CustomHeader Grid.Row="0" TitleText="Send OTP"/>
+            <Grid Grid.Row="1">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="3*"/>
+                    <RowDefinition Height="2*"/>
+                    <RowDefinition Height="5*"/>
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="5"/>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="5"/>
+                </Grid.ColumnDefinitions>
+                <Image Grid.Row="0" Grid.Column="1" Source="logo.png" HorizontalOptions="Center" VerticalOptions="End" HeightRequest="100"/>
+                <Label Grid.Row="1" Grid.Column="1" Text="Mere Near" HorizontalOptions="Center" VerticalOptions="Start" HorizontalTextAlignment="Center" VerticalTextAlignment="Start" FontSize="50"/>
+
+                <Grid Grid.Row="2" Grid.Column="1">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="85"/>
+                        <RowDefinition Height="*"/>
+                    </Grid.RowDefinitions>
+                    <!--Phone Number Field-->
+                    <Grid Grid.Row="0" RowSpacing="0">
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="40"/>
+                            <RowDefinition Height="40"/>
+                            <RowDefinition Height="1"/>
+                        </Grid.RowDefinitions>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="20"/>
+                            <ColumnDefinition Width="*"/>
+                        </Grid.ColumnDefinitions>
+                        <Image Grid.Row="0" Grid.Column="0" Source="phone.png" HeightRequest="20" WidthRequest="20"/>
+                        <Label Grid.Row="0" Grid.Column="1" Text="OTP" Style="{StaticResource BlueLabel}"/>
+
+                        <Entry Grid.Row="1" Grid.Column="1" Placeholder="Enter 4 digits OTP sent on your mobile" Text="{Binding OTPNumber}" PlaceholderColor="LightGray"/>
+                    
+                        <BoxView Grid.Row="2" Grid.ColumnSpan="2" BackgroundColor="LightGray"/>
+                    </Grid>
+
+                    <!--Button Field-->
+                    <Grid Grid.Row="1" VerticalOptions="End">
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="Auto"/>
+                            <RowDefinition Height="45"/>
+                        </Grid.RowDefinitions>
+                        <Label Grid.Row="0" Text="Resend OTP" FontSize="12" TextColor="#8DB7E0" HorizontalOptions="End" HorizontalTextAlignment="End"/>
+                        <Button Grid.Row="1" Text="Login/Register" CornerRadius="25" BackgroundColor="Black" TextColor="White" Command="{Binding Login_RegisterCommand}"/>
+                    </Grid>
+
+                    <!--Footer Label Field-->
+                    <!--<StackLayout Grid.Row="2" Orientation="Horizontal" HorizontalOptions="Center" VerticalOptions="End" Margin="0,0,0,10">
+                         <Label Text="Don't Have An Account"/>
+                         <Label Text="Sign Up" TextColor="#8DB7E0">
+                         <Label.GestureRecognizers>
+                         <TapGestureRecognizer Command="{Binding FooterLabelCommand}"/>
+                         </Label.GestureRecognizers>
+                         </Label>
+                         </StackLayout>-->
+                </Grid>
+
+            </Grid>
+        </Grid>
+    </ContentPage>

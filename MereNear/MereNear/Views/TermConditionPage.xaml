@@ -1,0 +1,86 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:prism="clr-namespace:Prism.Mvvm;assembly=Prism.Forms"
+             prism:ViewModelLocator.AutowireViewModel="True"
+             x:Class="MereNear.Views.TermConditionPage" NavigationPage.HasNavigationBar="False"
+                 xmlns:common="clr-namespace:MereNear.Views.Common">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="50"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+        <common:CustomHeader Grid.Row="0" TitleText="Terms and Condition"/>
+        <ScrollView Grid.Row="1">
+            <Grid >
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="2*"/>
+                    <RowDefinition Height="2*"/>
+                    <RowDefinition Height="2*"/>
+                    <RowDefinition Height="2*"/>
+                    <RowDefinition Height="2*"/>
+                    <RowDefinition Height="2*"/>
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="5"/>
+                    <ColumnDefinition Width="10"/>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="5"/>
+                </Grid.ColumnDefinitions>
+                <!--1st TermCondition-->
+                <Label Grid.Row="0" Grid.Column="1" HorizontalOptions="Start" Text="1," TextColor="Black" FontAttributes="Bold"/>
+                <Label Grid.Row="0" Grid.Column="2" HorizontalOptions="StartAndExpand" TextColor="Gray" LineBreakMode="WordWrap">
+                    <Label.Text>
+                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras ac felis vitae mi maximus pretium. Morbi accumsan sem non suscipit posuere. Integer et ante velit. Ut vitae leo diam. Integer interdum egestas nisl, eget sodales felis fringilla sed. Nunc pellentesque ultrices tincidunt. Phasellus risus arcu, cursus eu porta non, vestibulum ac nibh. Suspendisse scelerisque sem a nunc malesuada, efficitur porta neque egestas. Pellentesque non neque mattis, imperdiet sapien quis, vestibulum nibh. Proin malesuada tellus at efficitur maximu
+                    Duis ut porttitor nisi. Nunc neque justo, convallis et scelerisque quis, accumsan ac nisl. Phasellus pulvinar, nulla vel laoreet bibendum, sapien nibh pharetra turpis, eu interdum ante eros sit amet libero. Fusce malesuada a libero pharetra mollis. Donec dignissim tincidunt tempor. Mauris in felis leo. Nulla sed sapien porta, sodales ligula at, ultrices urna. Praesent ultrices porta quam id ultrices. Praesent elit orci, vehicula in quam at, porta commodo mi. Curabitur posuere felis eget egestas bibendum. In vel diam nulla. Mauris elementum scelerisque arcu id porta. Pellentesque eget velit auctor, lobortis magna ut, aliquet tellus. Quisque nisi lectus, finibus vitae auctor sit amet, molestie a purus.
+                    </Label.Text>
+                </Label>
+
+                <!--12nd TermCondition-->
+                <Label Grid.Row="1" Grid.Column="1" HorizontalOptions="Start" Text="2," TextColor="Black" FontAttributes="Bold"/>
+                <Label Grid.Row="1" Grid.Column="2" HorizontalOptions="StartAndExpand" TextColor="Gray" LineBreakMode="WordWrap">
+                    <Label.Text>
+                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras ac felis vitae mi maximus pretium. Morbi accumsan sem non suscipit posuere. Integer et ante velit. Ut vitae leo diam. Integer interdum egestas nisl, eget sodales felis fringilla sed. Nunc pellentesque ultrices tincidunt. Phasellus risus arcu, cursus eu porta non, vestibulum ac nibh. Suspendisse scelerisque sem a nunc malesuada, efficitur porta neque egestas. Pellentesque non neque mattis, imperdiet sapien quis, vestibulum nibh. Proin malesuada tellus at efficitur maximu
+                    Duis ut porttitor nisi. Nunc neque justo, convallis et scelerisque quis, accumsan ac nisl. Phasellus pulvinar, nulla vel laoreet bibendum, sapien nibh pharetra turpis, eu interdum ante eros sit amet libero. Fusce malesuada a libero pharetra mollis. Donec dignissim tincidunt tempor. Mauris in felis leo. Nulla sed sapien porta, sodales ligula at, ultrices urna. Praesent ultrices porta quam id ultrices. Praesent elit orci, vehicula in quam at, porta commodo mi. Curabitur posuere felis eget egestas bibendum. In vel diam nulla. Mauris elementum scelerisque arcu id porta. Pellentesque eget velit auctor, lobortis magna ut, aliquet tellus. Quisque nisi lectus, finibus vitae auctor sit amet, molestie a purus.
+                    </Label.Text>
+                </Label>
+
+                <!--3rd TermCondition-->
+                <Label Grid.Row="2" Grid.Column="1" HorizontalOptions="Start" Text="3," TextColor="Black" FontAttributes="Bold"/>
+                <Label Grid.Row="2" Grid.Column="2" HorizontalOptions="StartAndExpand" TextColor="Gray" LineBreakMode="WordWrap">
+                    <Label.Text>
+                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras ac felis vitae mi maximus pretium. Morbi accumsan sem non suscipit posuere. Integer et ante velit. Ut vitae leo diam. Integer interdum egestas nisl, eget sodales felis fringilla sed. Nunc pellentesque ultrices tincidunt. Phasellus risus arcu, cursus eu porta non, vestibulum ac nibh. Suspendisse scelerisque sem a nunc malesuada, efficitur porta neque egestas. Pellentesque non neque mattis, imperdiet sapien quis, vestibulum nibh. Proin malesuada tellus at efficitur maximu
+                    Duis ut porttitor nisi. Nunc neque justo, convallis et scelerisque quis, accumsan ac nisl. Phasellus pulvinar, nulla vel laoreet bibendum, sapien nibh pharetra turpis, eu interdum ante eros sit amet libero. Fusce malesuada a libero pharetra mollis. Donec dignissim tincidunt tempor. Mauris in felis leo. Nulla sed sapien porta, sodales ligula at, ultrices urna. Praesent ultrices porta quam id ultrices. Praesent elit orci, vehicula in quam at, porta commodo mi. Curabitur posuere felis eget egestas bibendum. In vel diam nulla. Mauris elementum scelerisque arcu id porta. Pellentesque eget velit auctor, lobortis magna ut, aliquet tellus. Quisque nisi lectus, finibus vitae auctor sit amet, molestie a purus.
+                    </Label.Text>
+                </Label>
+
+                <!--4th TermCondition-->
+                <Label Grid.Row="3" Grid.Column="1" HorizontalOptions="Start" Text="4," TextColor="Black" FontAttributes="Bold"/>
+                <Label Grid.Row="3" Grid.Column="2" HorizontalOptions="StartAndExpand" TextColor="Gray" LineBreakMode="WordWrap">
+                    <Label.Text>
+                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras ac felis vitae mi maximus pretium. Morbi accumsan sem non suscipit posuere. Integer et ante velit. Ut vitae leo diam. Integer interdum egestas nisl, eget sodales felis fringilla sed. Nunc pellentesque ultrices tincidunt. Phasellus risus arcu, cursus eu porta non, vestibulum ac nibh. Suspendisse scelerisque sem a nunc malesuada, efficitur porta neque egestas. Pellentesque non neque mattis, imperdiet sapien quis, vestibulum nibh. Proin malesuada tellus at efficitur maximu
+                    Duis ut porttitor nisi. Nunc neque justo, convallis et scelerisque quis, accumsan ac nisl. Phasellus pulvinar, nulla vel laoreet bibendum, sapien nibh pharetra turpis, eu interdum ante eros sit amet libero. Fusce malesuada a libero pharetra mollis. Donec dignissim tincidunt tempor. Mauris in felis leo. Nulla sed sapien porta, sodales ligula at, ultrices urna. Praesent ultrices porta quam id ultrices. Praesent elit orci, vehicula in quam at, porta commodo mi. Curabitur posuere felis eget egestas bibendum. In vel diam nulla. Mauris elementum scelerisque arcu id porta. Pellentesque eget velit auctor, lobortis magna ut, aliquet tellus. Quisque nisi lectus, finibus vitae auctor sit amet, molestie a purus.
+                    </Label.Text>
+                </Label>
+
+                <!--5th TermCondition-->
+                <Label Grid.Row="4" Grid.Column="1" HorizontalOptions="Start" Text="5," TextColor="Black" FontAttributes="Bold"/>
+                <Label Grid.Row="4" Grid.Column="2" HorizontalOptions="StartAndExpand" TextColor="Gray" LineBreakMode="WordWrap">
+                    <Label.Text>
+                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras ac felis vitae mi maximus pretium. Morbi accumsan sem non suscipit posuere. Integer et ante velit. Ut vitae leo diam. Integer interdum egestas nisl, eget sodales felis fringilla sed. Nunc pellentesque ultrices tincidunt. Phasellus risus arcu, cursus eu porta non, vestibulum ac nibh. Suspendisse scelerisque sem a nunc malesuada, efficitur porta neque egestas. Pellentesque non neque mattis, imperdiet sapien quis, vestibulum nibh. Proin malesuada tellus at efficitur maximu
+                    Duis ut porttitor nisi. Nunc neque justo, convallis et scelerisque quis, accumsan ac nisl. Phasellus pulvinar, nulla vel laoreet bibendum, sapien nibh pharetra turpis, eu interdum ante eros sit amet libero. Fusce malesuada a libero pharetra mollis. Donec dignissim tincidunt tempor. Mauris in felis leo. Nulla sed sapien porta, sodales ligula at, ultrices urna. Praesent ultrices porta quam id ultrices. Praesent elit orci, vehicula in quam at, porta commodo mi. Curabitur posuere felis eget egestas bibendum. In vel diam nulla. Mauris elementum scelerisque arcu id porta. Pellentesque eget velit auctor, lobortis magna ut, aliquet tellus. Quisque nisi lectus, finibus vitae auctor sit amet, molestie a purus.
+                    </Label.Text>
+                </Label>
+
+                <!--6th TermCondition-->
+                <Label Grid.Row="5" Grid.Column="1" HorizontalOptions="Start" Text="6," TextColor="Black" FontAttributes="Bold"/>
+                <Label Grid.Row="5" Grid.Column="2" HorizontalOptions="StartAndExpand" TextColor="Gray" LineBreakMode="WordWrap">
+                    <Label.Text>
+                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras ac felis vitae mi maximus pretium. Morbi accumsan sem non suscipit posuere. Integer et ante velit. Ut vitae leo diam. Integer interdum egestas nisl, eget sodales felis fringilla sed. Nunc pellentesque ultrices tincidunt. Phasellus risus arcu, cursus eu porta non, vestibulum ac nibh. Suspendisse scelerisque sem a nunc malesuada, efficitur porta neque egestas. Pellentesque non neque mattis, imperdiet sapien quis, vestibulum nibh. Proin malesuada tellus at efficitur maximu
+                    Duis ut porttitor nisi. Nunc neque justo, convallis et scelerisque quis, accumsan ac nisl. Phasellus pulvinar, nulla vel laoreet bibendum, sapien nibh pharetra turpis, eu interdum ante eros sit amet libero. Fusce malesuada a libero pharetra mollis. Donec dignissim tincidunt tempor. Mauris in felis leo. Nulla sed sapien porta, sodales ligula at, ultrices urna. Praesent ultrices porta quam id ultrices. Praesent elit orci, vehicula in quam at, porta commodo mi. Curabitur posuere felis eget egestas bibendum. In vel diam nulla. Mauris elementum scelerisque arcu id porta. Pellentesque eget velit auctor, lobortis magna ut, aliquet tellus. Quisque nisi lectus, finibus vitae auctor sit amet, molestie a purus.
+                    </Label.Text>
+                </Label>
+            </Grid>
+        </ScrollView>
+    </Grid>
+</ContentPage>

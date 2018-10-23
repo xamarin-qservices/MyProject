@@ -1,0 +1,38 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ContentView xmlns="http://xamarin.com/schemas/2014/forms" 
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="MereNear.Views.Common.CustomHeader_Hamburger"
+             x:Name="Root" Padding="0"
+             BackgroundColor="#1976D2">
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="40"/>
+            <ColumnDefinition Width="40"/>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="40"/>
+            <ColumnDefinition Width="40"/>
+        </Grid.ColumnDefinitions>
+        <Image Margin="10,0,0,0" Grid.Column="0" BackgroundColor="Transparent" HorizontalOptions="Start" HeightRequest="20" WidthRequest="20" VerticalOptions="Center" Source="{Binding Source={x:Reference Root}, Path=HeaderLeftIcon}" >
+            <Image.GestureRecognizers>
+                <TapGestureRecognizer Command="{Binding HeaderLeftIconCommand}"/>
+            </Image.GestureRecognizers>
+        </Image>
+        <Image Margin="0,0,0,0" Grid.Column="1" BackgroundColor="Transparent" HorizontalOptions="Center" HeightRequest="20" WidthRequest="20" VerticalOptions="Center" Source="{Binding Source={x:Reference Root}, Path=HeaderLeft2ndIcon}" >
+            <Image.GestureRecognizers>
+                <TapGestureRecognizer Command="{Binding HeaderLeft2ndIconCommand}"/>
+            </Image.GestureRecognizers>
+        </Image>
+        <Label Grid.Column="2" Text="{Binding Source={x:Reference Root}, Path=TitleText}"  FontSize="20" TextColor="White"  BackgroundColor="Transparent" HorizontalOptions="Center" VerticalOptions="Center" HorizontalTextAlignment="Center" VerticalTextAlignment="Center"/>
+
+        <Image Margin="0,0,0,0" Grid.Column="3" BackgroundColor="Transparent" HorizontalOptions="Center" HeightRequest="20" WidthRequest="20" VerticalOptions="Center" Source="{Binding Source={x:Reference Root}, Path=HeaderRight2ndIcon}" >
+            <Image.GestureRecognizers>
+                <TapGestureRecognizer Command="{Binding HeaderRight2ndIconCommand}"/>
+            </Image.GestureRecognizers>
+        </Image>
+        <Image Margin="0,0,10,0" Grid.Column="4" BackgroundColor="Transparent" HorizontalOptions="End" HeightRequest="20" WidthRequest="20" VerticalOptions="Center" Source="{Binding Source={x:Reference Root}, Path=HeaderRightIcon}" >
+            <Image.GestureRecognizers>
+                <TapGestureRecognizer Command="{Binding HeaderRightIconCommand}"/>
+            </Image.GestureRecognizers>
+        </Image>
+    </Grid>
+</ContentView>

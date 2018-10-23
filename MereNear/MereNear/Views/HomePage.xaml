@@ -1,0 +1,240 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:prism="clr-namespace:Prism.Mvvm;assembly=Prism.Forms"
+             prism:ViewModelLocator.AutowireViewModel="True"
+             x:Class="MereNear.Views.HomePage" NavigationPage.HasNavigationBar="False"
+             xmlns:common="clr-namespace:MereNear.Views.Common"
+             xmlns:flv="clr-namespace:DLToolkit.Forms.Controls;assembly=DLToolkit.Forms.Controls.FlowListView">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="50"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+        <common:CustomHeader_Hamburger Grid.Row="0" TitleText="{Binding TitleText}" HeaderLeft2ndIcon="{Binding HeaderLeft2ndIcon}" HeaderLeftIcon="hamburguer_icon"/>
+        <Grid Grid.Row="1">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="1*"/>
+                <RowDefinition Height="9*"/>
+                <RowDefinition Height="1*"/>
+            </Grid.RowDefinitions>
+            <Frame Grid.Row="0" HorizontalOptions="Center" Padding="5" CornerRadius="30" HasShadow="false"  VerticalOptions="Center"  HeightRequest="40" WidthRequest="300" BorderColor="#3B92E7" BackgroundColor="Transparent">
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="*"/>
+                    </Grid.ColumnDefinitions>
+                    <Button Grid.Column="0" Text="Post A Job" BorderRadius="20"  HorizontalOptions="FillAndExpand" VerticalOptions="Center" TextColor="{Binding PostJobButtonTextColor}" BackgroundColor="{Binding PostJobButtonColor}" Command="{Binding PostJobCommand}"/>
+                    <Button Grid.Column="1" Text="Looking For Job" BorderRadius="20" HorizontalOptions="FillAndExpand" VerticalOptions="Center" TextColor="{Binding LookingJobButtonTextColor}" BackgroundColor="{Binding LookingJobButtonColor}" Command="{Binding LookingJobCommand}"/>
+                </Grid>
+            </Frame>
+
+            <ScrollView Grid.Row="1">
+                <flv:FlowListView x:Name="homePageData" FlowColumnCount="3" FlowItemsSource="{Binding NewCategoryData}"
+                                  SeparatorVisibility="None" HasUnevenRows="True" FlowItemTapped="homePageData_FlowItemTapped">
+                    <flv:FlowListView.FlowColumnTemplate>
+                        <DataTemplate>
+                            <Grid Margin="5">
+                                <Grid.GestureRecognizers>
+                                    <TapGestureRecognizer Command="{Binding ListViewCommand}"/>
+                                </Grid.GestureRecognizers>
+                                <Grid.RowDefinitions>
+                                    <RowDefinition Height="150"/>
+                                </Grid.RowDefinitions>
+                                <Grid Grid.Row="0">
+                                    <Image Source="{Binding CategoryImage}" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand"/>
+                                    <Label Text="{Binding CategoryName}" HorizontalOptions="Start" VerticalOptions="End" Margin="7,0,0,10"/>
+                                </Grid>
+                                <!--<Frame Grid.Row="0" Padding="1" Style="{StaticResource FrameBorderColor}">
+                                    <Grid>
+                                        <Image Source="{Binding CategoryImage}" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand" Aspect="AspectFill"/>
+                                        <Label Text="{Binding CategoryName}" HorizontalOptions="Start" VerticalOptions="End" Margin="5,0,0,10"/>
+                                    </Grid>
+                                </Frame>-->
+                            </Grid>
+                        </DataTemplate>
+                    </flv:FlowListView.FlowColumnTemplate>
+
+                </flv:FlowListView>
+            </ScrollView>
+            <!--#region Commented Static Frame-->
+            <!--<ScrollView Grid.Row="1">
+                <Grid>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="150"/>   --><!--Frames 1st Row(0)--><!--
+                        <RowDefinition Height="10"/>
+                        <RowDefinition Height="150"/>   --><!--Frames 2nd Row(2)--><!--
+                        <RowDefinition Height="10"/>
+                        <RowDefinition Height="150"/>   --><!--Frames 3rd Row(4)--><!--
+                    </Grid.RowDefinitions>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="10"/>
+                        <ColumnDefinition Width="*"/>   --><!--Frames 1st Col(1)--><!--
+                        <ColumnDefinition Width="10"/>
+                        <ColumnDefinition Width="*"/>   --><!--Frames 2nd Col(3)--><!--
+                        <ColumnDefinition Width="10"/>
+                        <ColumnDefinition Width="*"/>   --><!--Frames 3rd Col(5)--><!--
+                        <ColumnDefinition Width="10"/>
+                    </Grid.ColumnDefinitions>
+                    --><!--1st Frame(1,1)--><!--
+                    <Frame Grid.Row="0" Grid.Column="1" Padding="1">
+                        <Frame.GestureRecognizers>
+                            <TapGestureRecognizer Command="{Binding PlumberCommand}"/>
+                        </Frame.GestureRecognizers>
+                        <Grid>
+                            <Image Source="background.png" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand" Aspect="AspectFill"/>
+                            <Image Source="logo.png" HorizontalOptions="Center" VerticalOptions="Center" HeightRequest="50" WidthRequest="50"/>
+                            <Label Text="Plumber" HorizontalOptions="Start" VerticalOptions="End" Margin="5,0,0,10"/>
+                        </Grid>
+                    </Frame>
+                    --><!--2nd Frame(1,2)--><!--
+                    <Frame Grid.Row="0" Grid.Column="3" Padding="1">
+                        <Grid>
+                            <Image Source="background.png" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand" Aspect="AspectFill"/>
+                            <Image Source="logo.png" HorizontalOptions="Center" VerticalOptions="Center" HeightRequest="50" WidthRequest="50"/>
+                            <Label Text="Plumber" HorizontalOptions="Start" VerticalOptions="End" Margin="5,0,0,10"/>
+                        </Grid>
+                    </Frame>
+                    --><!--3rd Frame(1,3)--><!--
+                    <Frame Grid.Row="0" Grid.Column="5" Padding="1">
+                        <Grid>
+                            <Image Source="background.png" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand" Aspect="AspectFill"/>
+                            <Image Source="logo.png" HorizontalOptions="Center" VerticalOptions="Center" HeightRequest="50" WidthRequest="50"/>
+                            <Label Text="Plumber" HorizontalOptions="Start" VerticalOptions="End" Margin="5,0,0,10"/>
+                        </Grid>
+                    </Frame>
+                    --><!--4th Frame(2,1)--><!--
+                    <Frame Grid.Row="2" Grid.Column="1" Padding="1">
+                        <Grid>
+                            <Image Source="background.png" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand" Aspect="AspectFill"/>
+                            <Image Source="logo.png" HorizontalOptions="Center" VerticalOptions="Center" HeightRequest="50" WidthRequest="50"/>
+                            <Label Text="Plumber" HorizontalOptions="Start" VerticalOptions="End" Margin="5,0,0,10"/>
+                        </Grid>
+                    </Frame>
+                    --><!--5th Frame(2,2)--><!--
+                    <Frame Grid.Row="2" Grid.Column="3" Padding="1">
+                        <Grid>
+                            <Image Source="background.png" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand" Aspect="AspectFill"/>
+                            <Image Source="logo.png" HorizontalOptions="Center" VerticalOptions="Center" HeightRequest="50" WidthRequest="50"/>
+                            <Label Text="Plumber" HorizontalOptions="Start" VerticalOptions="End" Margin="5,0,0,10"/>
+                        </Grid>
+                    </Frame>
+                    --><!--6th Frame(2,3)--><!--
+                    <Frame Grid.Row="2" Grid.Column="5" Padding="1">
+                        <Grid>
+                            <Image Source="background.png" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand" Aspect="AspectFill"/>
+                            <Image Source="logo.png" HorizontalOptions="Center" VerticalOptions="Center" HeightRequest="50" WidthRequest="50"/>
+                            <Label Text="Plumber" HorizontalOptions="Start" VerticalOptions="End" Margin="5,0,0,10"/>
+                        </Grid>
+                    </Frame>
+                    --><!--7th Frame(3,1)--><!--
+                    <Frame Grid.Row="4" Grid.Column="1" Padding="1">
+                        <Grid>
+                            <Image Source="background.png" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand" Aspect="AspectFill"/>
+                            <Image Source="logo.png" HorizontalOptions="Center" VerticalOptions="Center" HeightRequest="50" WidthRequest="50"/>
+                            <Label Text="Plumber" HorizontalOptions="Start" VerticalOptions="End" Margin="5,0,0,10"/>
+                        </Grid>
+                    </Frame>
+                    --><!--8th Frame(3,2)--><!--
+                    <Frame Grid.Row="4" Grid.Column="3" Padding="1">
+                        <Grid>
+                            <Image Source="background.png" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand" Aspect="AspectFill"/>
+                            <Image Source="logo.png" HorizontalOptions="Center" VerticalOptions="Center" HeightRequest="50" WidthRequest="50"/>
+                            <Label Text="Plumber" HorizontalOptions="Start" VerticalOptions="End" Margin="5,0,0,10"/>
+                        </Grid>
+                    </Frame>
+                    --><!--9th Frame(3,3)-->
+                    <!--<Frame Grid.Row="4" Grid.Column="5" Padding="1">
+                        <Grid>
+                            <Image Source="background.png" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand" Aspect="AspectFill"/>
+                            <Image Source="logo.png" HorizontalOptions="Center" VerticalOptions="Center" HeightRequest="50" WidthRequest="50"/>
+                            <Label Text="Plumber" HorizontalOptions="Start" VerticalOptions="End" Margin="5,0,0,10"/>
+                        </Grid>
+                    </Frame>--><!--
+                </Grid>
+            </ScrollView>-->
+            <!--#endregion-->
+            <!--#region Tabbed Bar-->
+            <Grid Grid.Row="2" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand" BackgroundColor="White">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="Auto"/>
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                </Grid.ColumnDefinitions>
+                <!--1st Tab-->
+                <BoxView Grid.Row="0" Grid.RowSpan="2" Grid.Column="0" BackgroundColor="{Binding MyJobsBGColor}" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand">
+                    <BoxView.GestureRecognizers>
+                        <TapGestureRecognizer Command="{Binding MyJobsTabCommand}"/>
+                    </BoxView.GestureRecognizers>
+                </BoxView>
+                <Image Grid.Row="0" Grid.Column="0" Source="{Binding MyJobsIcon}" HorizontalOptions="Center" VerticalOptions="End" HeightRequest="20" WidthRequest="20">
+                    <Image.GestureRecognizers>
+                        <TapGestureRecognizer Command="{Binding MyJobsTabCommand}"/>
+                    </Image.GestureRecognizers>
+                </Image>
+                <Label Grid.Row="1" Grid.Column="0" Text="My Jobs" TextColor="{Binding MyJobsLabelColor}" FontSize="12" HorizontalOptions="Center">
+                    <Label.GestureRecognizers>
+                        <TapGestureRecognizer Command="{Binding MyJobsTabCommand}"/>
+                    </Label.GestureRecognizers>
+                </Label>
+                
+                <!--2nd Tab-->
+                <BoxView Grid.Row="0" Grid.RowSpan="2" Grid.Column="1" BackgroundColor="{Binding MyPostsBGColor}" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand">
+                    <BoxView.GestureRecognizers>
+                        <TapGestureRecognizer Command="{Binding MyPostsTabCommand}"/>
+                    </BoxView.GestureRecognizers>
+                </BoxView>
+                <Image Grid.Row="0" Grid.Column="1" Source="{Binding MyPostsIcon}" HorizontalOptions="Center" VerticalOptions="End" HeightRequest="20" WidthRequest="20">
+                    <Image.GestureRecognizers>
+                        <TapGestureRecognizer Command="{Binding MyPostsTabCommand}"/>
+                    </Image.GestureRecognizers>
+                </Image>
+                <Label Grid.Row="1" Grid.Column="1" HorizontalOptions="Center" Text="My Jobs" TextColor="{Binding MyPostsLabelColor}" FontSize="12">
+                    <Label.GestureRecognizers>
+                        <TapGestureRecognizer Command="{Binding MyJobsTabCommand}"/>
+                    </Label.GestureRecognizers>
+                </Label>
+
+                <!--3rd Tab-->
+                <BoxView Grid.Row="0" Grid.RowSpan="2" Grid.Column="2" BackgroundColor="{Binding MessagesBGColor}" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand">
+                    <BoxView.GestureRecognizers>
+                        <TapGestureRecognizer Command="{Binding MessagesTabCommand}"/>
+                    </BoxView.GestureRecognizers>
+                </BoxView>
+                <Image Grid.Row="0" Grid.Column="2" Source="{Binding MessagesIcon}" HorizontalOptions="Center" VerticalOptions="End" HeightRequest="20" WidthRequest="20">
+                    <Image.GestureRecognizers>
+                        <TapGestureRecognizer Command="{Binding MessagesTabCommand}"/>
+                    </Image.GestureRecognizers>
+                </Image>
+                <Label Grid.Row="1" Grid.Column="2" HorizontalOptions="Center" Text="My Jobs" TextColor="{Binding MessagesLabelColor}" FontSize="12">
+                    <Label.GestureRecognizers>
+                        <TapGestureRecognizer Command="{Binding MessagesTabCommand}"/>
+                    </Label.GestureRecognizers>
+                </Label>
+
+                <!--4th Tab-->
+                <BoxView Grid.Row="0" Grid.RowSpan="2" Grid.Column="3" BackgroundColor="{Binding NotificationsBGColor}" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand">
+                    <BoxView.GestureRecognizers>
+                        <TapGestureRecognizer Command="{Binding NotificationsTabCommand}"/>
+                    </BoxView.GestureRecognizers>
+                </BoxView>
+                <Image Grid.Row="0" Grid.Column="3" Source="{Binding NotificationsIcon}" HorizontalOptions="Center" VerticalOptions="End" HeightRequest="20" WidthRequest="20">
+                    <Image.GestureRecognizers>
+                        <TapGestureRecognizer Command="{Binding NotificationsTabCommand}"/>
+                    </Image.GestureRecognizers>
+                </Image>
+                <Label Grid.Row="1" Grid.Column="3" HorizontalOptions="Center" Text="My Jobs" TextColor="{Binding NotificationsLabelColor}" FontSize="12">
+                    <Label.GestureRecognizers>
+                        <TapGestureRecognizer Command="{Binding NotificationsTabCommand}"/>
+                    </Label.GestureRecognizers>
+                </Label>
+            </Grid>
+            <!--#endregion-->
+        </Grid>
+    </Grid>
+</ContentPage>

@@ -1,0 +1,78 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:prism="clr-namespace:Prism.Mvvm;assembly=Prism.Forms"
+             prism:ViewModelLocator.AutowireViewModel="True"
+             x:Class="MereNear.Views.LoginPage" NavigationPage.HasNavigationBar="False"
+             xmlns:common="clr-namespace:MereNear.Views.Common">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="50"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+        <common:CustomHeader Grid.Row="0" TitleText="Login"/>
+        <Grid Grid.Row="1">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="3*"/>
+                <RowDefinition Height="2*"/>
+                <RowDefinition Height="5*"/>
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="5"/>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="5"/>
+            </Grid.ColumnDefinitions>
+            <Image Grid.Row="0" Grid.Column="1" Source="logo.png" HorizontalOptions="Center" VerticalOptions="End" HeightRequest="100"/>
+            <Label Grid.Row="1" Grid.Column="1" Text="Mere Near" HorizontalOptions="Center" VerticalOptions="Start" HorizontalTextAlignment="Center" VerticalTextAlignment="Start" FontSize="50"/>
+
+            <Grid Grid.Row="2" Grid.Column="1">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="80"/>
+                    <RowDefinition Height="*"/>
+                </Grid.RowDefinitions>
+                <!--Phone Number Field-->
+                <Grid Grid.Row="0" RowSpacing="0">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="40"/>
+                        <RowDefinition Height="40"/>
+                        <RowDefinition Height="1"/>
+                    </Grid.RowDefinitions>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="20"/>
+                        <ColumnDefinition Width="*"/>
+                    </Grid.ColumnDefinitions>
+                    <Image Grid.Row="0" Grid.Column="0" Source="phone.png" HeightRequest="20" WidthRequest="20"/>
+                    <Label Grid.Row="0" Grid.Column="1" Text="Phone Number" Style="{StaticResource BlueLabel}"/>
+
+                    <Grid Grid.Row="1" Grid.Column="1">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="40"/>
+                            <ColumnDefinition Width="*"/>
+                        </Grid.ColumnDefinitions>
+                        <Frame Grid.Column="0" CornerRadius="5" HorizontalOptions="FillAndExpand" HeightRequest="30" VerticalOptions="Center" BackgroundColor="White" Padding="0" BorderColor="#8DB7E0">
+                            <Picker Title="+91" TextColor="#8DB7E0" x:Name="pickerCountryCode" ItemDisplayBinding="{Binding CountryCode}" SelectedItem="{Binding LanguageSelected}" BackgroundColor="Transparent" HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand"/>
+                        </Frame>
+                        <!--<Button Grid.Column="0" CornerRadius="5" HorizontalOptions="FillAndExpand" HeightRequest="30" VerticalOptions="Center" TextColor="#8DB7E0" Text="+91" BackgroundColor="White" BorderColor="#8DB7E0" BorderWidth="2"/>-->
+                        <Entry Grid.Column="1" Placeholder="XXX-XXX-XXXX" Text="{Binding MobileNumber}" PlaceholderColor="LightGray"/>
+                    </Grid>
+                    <BoxView Grid.Row="2" Grid.ColumnSpan="2" BackgroundColor="LightGray"/>
+                </Grid>
+
+                <!--Button Field-->
+                <Button Grid.Row="1" Text="Login" CornerRadius="25" BackgroundColor="Black" TextColor="White" Command="{Binding LoginCommand}" HeightRequest="50" VerticalOptions="End"/>
+
+                <!--Footer Label Field-->
+                <StackLayout Grid.Row="2" Orientation="Horizontal" HorizontalOptions="Center" VerticalOptions="End" Margin="0,0,0,10">
+                    <Label Text="Don't Have An Account"/>
+                    <Label Text="Sign Up" TextColor="#8DB7E0">
+                        <Label.GestureRecognizers>
+                            <TapGestureRecognizer Command="{Binding FooterLabelCommand}"/>
+                        </Label.GestureRecognizers>
+                    </Label>
+                </StackLayout>
+            </Grid>
+
+        </Grid>
+    </Grid>
+</ContentPage>
